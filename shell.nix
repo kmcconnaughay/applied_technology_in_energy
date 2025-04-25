@@ -2,6 +2,7 @@ with import <nixpkgs> {};
 let
   pythonEnv = python313.withPackages (ps: [
     ps.ipython
+    ps.ipywidgets
     ps.jupyter
     ps.matplotlib
     ps.pandas
@@ -20,6 +21,4 @@ in mkShell {
     git
     mypy
   ];
-
-  shellHook = "jupyter notebook";
 }
